@@ -36,7 +36,7 @@ async function handleValidateLogin(req, res){
 
     // case if user found
     return res.status(200).render('homepage', {
-        name : createdUser.name
+        name : reqUser.name
     })
 }
 
