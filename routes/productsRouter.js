@@ -8,6 +8,6 @@ router.get('/products', handleGetAllProducts)  //done
 router.get('/products/:id', handleGetProductsById) //done
 router.post('/products', handleCreatingNewProduct) //done
 router.patch('/products/:id', handleUpdatingProduct) //done
-router.delete('/products/:id', handleDeletingProduct) 
+router.delete('/products/:id', handleDeletingProduct) //done 
 
 module.exports = router

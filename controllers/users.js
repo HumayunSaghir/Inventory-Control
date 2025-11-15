@@ -1,4 +1,5 @@
 const userModel = require('../models/users')
+const {setUser} = require('../services/auth')
 
 function handleShowLoginPage(req, res){
     return res.status(200).render('login')
@@ -17,6 +18,10 @@ async function handleCreateUser(req, res){
         password : body.password,
     })
 
+    // send the token to the client
+    const token = setUser(createdUser)
+    res.cookie('uid', token)
+
     return res.status(200).render('homepage', {
         name : createdUser.name
     })
@@ -33,6 +38,10 @@ async function handleValidateLogin(req, res){
             msg : 'no user found with these credentials!'
         })
     }
+
+    // if user found the send the token to client
+    const token = setUser(reqUser)
+    res.cookie('uid', token)
 
     // case if user found
     return res.status(200).render('homepage', {
