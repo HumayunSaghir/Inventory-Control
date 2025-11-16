@@ -88,7 +88,18 @@ async function handleDeletingProduct(req, res){
     return res.status(200).json({status : `${deletedProd.name} has been deleted!`})
 }
 
+async function handleGetInventoryInfo(req, res){
+    const allData = await prdModel.find({})
+
+    if(!allData){
+        return res.status(404).json({status : 'no products in the inventory!'})
+    }
+
+    return res.status(200).json(allData)
+}
+
 module.exports = {
+    handleGetInventoryInfo,
     handleGetAllProducts,
     handleGetProductsById,
     handleCreatingNewProduct,

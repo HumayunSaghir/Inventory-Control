@@ -4,7 +4,7 @@ const userRouter = require('./routes/userRouter')
 const connectDatabase = require('./connection')
 const path = require('path')
 const logs = require('./middlewares/logs')
-const restrictLoginUser = require('./middlewares/auth')
+const {restrictLoginUser} = require('./middlewares/auth')
 const cookieParser = require('cookie-parser')
 
 const port = 8000

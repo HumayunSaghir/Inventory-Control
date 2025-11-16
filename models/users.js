@@ -16,6 +16,11 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true,
     },
+
+    role : {
+        type : String,
+    },
+    
 }, {timestamps : true})
 
 const userModel = new mongoose.model('users', userSchema)

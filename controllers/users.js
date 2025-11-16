@@ -16,6 +16,7 @@ async function handleCreateUser(req, res){
         name : body.name,
         email : body.email,
         password : body.password,
+        role : body.role,
     })
 
     // send the token to the client
