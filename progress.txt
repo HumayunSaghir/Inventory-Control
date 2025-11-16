@@ -1,2 +1,4 @@
 basic skeleton is made.
 authentication is implemented.
+implemented authorization.
+no frontend functionality added currently.
